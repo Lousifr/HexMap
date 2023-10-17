@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcd0s7mp3ldt"]
+
+[ext_resource type="Script" path="res://Scripts/HexMap.gd" id="1_1qexb"]
+
+[node name="HexMap" type="Node3D"]
+script = ExtResource("1_1qexb")

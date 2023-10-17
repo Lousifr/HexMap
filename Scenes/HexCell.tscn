@@ -1,0 +1,11 @@
+[gd_scene load_steps=5 format=3 uid="uid://d323sa2fmem2h"]
+
+[ext_resource type="PackedScene" uid="uid://dwatvysm0j31x" path="res://Assets/hex.glb" id="1_vdlvq"]
+[ext_resource type="Script" path="res://Scripts/HexCell.gd" id="2_etfrd"]
+[ext_resource type="Material" uid="uid://ds1tnpx37weib" path="res://Assets/MatOcean.tres" id="3_olmi2"]
+[ext_resource type="Material" uid="uid://d3ayei4ijud4l" path="res://Assets/MatGrass.tres" id="4_glb6o"]
+
+[node name="HexCell" instance=ExtResource("1_vdlvq")]
+script = ExtResource("2_etfrd")
+matOcean = ExtResource("3_olmi2")
+matGrass = ExtResource("4_glb6o")
