@@ -5,6 +5,7 @@
 [node name="Main" type="Node3D"]
 
 [node name="HexMap" type="HexMap" parent="."]
+cameraRigPath = NodePath("../CameraRig")
 
 [node name="CameraRig" type="Node3D" parent="."]
 script = ExtResource("2_doaa7")

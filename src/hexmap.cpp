@@ -26,17 +26,10 @@ HexMap::HexMap() {
 }
 
 HexMap::~HexMap() {
-    for (int q = 0; q < mapSize.x; q++)
-    {
-        for (int r = 0; r < mapSize.y; r++)
-        {
-            memdelete(&hexCells[q][r]);
-        }
-    }
+    hexCells.clear();
 }
 
 void HexMap::_ready() {
-    UtilityFunctions::print("Hello from HexMap::_ready()");
     generateHexMap();
 }
 
