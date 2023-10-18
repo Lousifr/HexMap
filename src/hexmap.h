@@ -21,13 +21,15 @@ private:
 	Vector2 mapSize = Vector2(64, 32);
 	Array hexCells;
 
-    NodePath cameraRigPath;
+    Node3D* cameraRig = nullptr;
+    void checkAndWrapHex(HexCell* hexCell);
 
 public:
 	HexMap();
 	~HexMap();
 
     void _ready();
+    void _process(float delta);
 
     void setNumCol(int p_numCol) { mapSize.x = p_numCol; }
     int getNumCol() { return mapSize.x; }
@@ -35,8 +37,14 @@ public:
     void setNumRow(int p_numRow) { mapSize.y = p_numRow; }
     int getNumRow() { return mapSize.y; }
 
-    void setCameraRigPath(NodePath p_nodePath) { cameraRigPath = p_nodePath; }
-    NodePath getCameraRigPath() const { return cameraRigPath; }
+    void setCameraRig(NodePath p_nodePath) { cameraRig = Object::cast_to<Node3D>(get_node_internal(p_nodePath)); }
+    NodePath getCameraRig() {
+        if (cameraRig != nullptr) {
+            return cameraRig->get_path();
+        } else {
+            return NodePath();
+        }
+    }
 
     void generateHexMap();
 

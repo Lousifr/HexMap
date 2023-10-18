@@ -1,11 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://5bibnvok524h"]
+[gd_scene load_steps=3 format=3 uid="uid://5bibnvok524h"]
 
 [ext_resource type="Script" path="res://Scripts/CameraRig.gd" id="2_doaa7"]
+
+[sub_resource type="GDScript" id="GDScript_ofec6"]
+script/source = "extends HexMap
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	generateHexMap()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="Main" type="Node3D"]
 
 [node name="HexMap" type="HexMap" parent="."]
-cameraRigPath = NodePath("../CameraRig")
+cameraRig = NodePath("/root/@EditorNode@17637/@Control@697/@Panel@698/@VBoxContainer@706/@HSplitContainer@709/@HSplitContainer@717/@HSplitContainer@725/@VBoxContainer@726/@VSplitContainer@728/@VSplitContainer@754/@VBoxContainer@755/@PanelContainer@800/MainScreen/@CanvasItemEditor@10090/@VSplitContainer@9915/@HSplitContainer@9917/@HSplitContainer@9919/@Control@9920/@SubViewportContainer@9921/@SubViewport@9922/Main/CameraRig/Camera3D")
+script = SubResource("GDScript_ofec6")
 
 [node name="CameraRig" type="Node3D" parent="."]
 script = ExtResource("2_doaa7")
