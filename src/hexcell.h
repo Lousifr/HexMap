@@ -5,6 +5,7 @@
 #include <godot_cpp/classes/packed_scene.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
 #include <godot_cpp/classes/resource_loader.hpp>
+#include <godot_cpp/classes/mesh_instance3d.hpp>
 
 namespace godot {
 
@@ -18,9 +19,11 @@ protected:
 
 private:
 	ResourceLoader* loader = ResourceLoader::get_singleton();
-	Ref<PackedScene> meshScene = loader->load("res://Scenes/HexMesh.tscn");
 
-	// Load hex materials
+	Ref<PackedScene> meshScene = loader->load("res://Scenes/HexMesh.tscn");
+	MeshInstance3D* meshInstance;
+
+	// TODO: Load hex materials
 
 	float hexSize { 1.0 };
 	float elevation { 0.0 };
@@ -43,14 +46,17 @@ private:
 
 public:
 	HexCell() {}
-	~HexCell() {}
+	~HexCell() {
+
+	}
 
 	void _init() {
 		
 	}
 
 	void _ready() {
-		add_child(meshScene->instantiate());
+		meshInstance = cast_to<MeshInstance3D>(meshScene->instantiate());
+		add_child(meshInstance);
 	}
 
 	void set_hexSize(float p_hexSize) { hexSize = p_hexSize; }

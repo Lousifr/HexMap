@@ -31,10 +31,10 @@ public:
     void _ready();
     void _process(float delta);
 
-    void setNumCol(int p_numCol) { mapSize.x = p_numCol; }
+    void setNumCol(int p_numCol) { mapSize.x = p_numCol; generateHexMap(); }
     int getNumCol() { return mapSize.x; }
 
-    void setNumRow(int p_numRow) { mapSize.y = p_numRow; }
+    void setNumRow(int p_numRow) { mapSize.y = p_numRow; generateHexMap(); }
     int getNumRow() { return mapSize.y; }
 
     void setCameraRig(NodePath p_nodePath) { cameraRig = Object::cast_to<Node3D>(get_node_internal(p_nodePath)); }

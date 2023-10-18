@@ -50,7 +50,20 @@ void HexMap::_process(float delta) {
 }
 
 void HexMap::generateHexMap() {
-    hexCells.clear();
+    if (!hexCells.is_empty())
+    {
+        for (int q = 0; q < hexCells.size(); q++) 
+        {
+            Array column = hexCells[q];
+            for (int r = 0; r < column.size(); r++) 
+            {
+                Object* obj = column[r];
+                HexCell* cell = Object::cast_to<HexCell>(obj);
+                remove_child(cell);
+            }
+        }
+    }
+
     for (int q = 0; q < mapSize.x; q++)
     {
         Array column;

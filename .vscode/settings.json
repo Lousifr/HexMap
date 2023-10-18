@@ -1,3 +1,8 @@
 {
-    "godot_tools.editor_path": "/home/lou/Programming/Godot/Engine/Godot_v4.1.2-stable_linux.x86_64/Godot_v4.1.2-stable_linux.x86_64"
+    "godot_tools.editor_path": "/home/lou/Programming/Godot/Engine/Godot_v4.1.2-stable_linux.x86_64/Godot_v4.1.2-stable_linux.x86_64",
+    "files.associations": {
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp"
+    }
 }
